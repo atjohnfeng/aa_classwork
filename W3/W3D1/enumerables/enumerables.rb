@@ -9,43 +9,61 @@ class Array
       self
     end
 
-def my_select(&prc)
-  new_arr = []
-  self.my_each(&prc)
-  i = 0
-  while i < self.length
-    if prc.call(self[i])
-      new_arr << self[i]
+    def my_select(&prc)
+
+        new_arr = []
+        self.my_each do |ele|
+            new_arr << ele if prc.call(ele)
+        end
+        new_arr
+
     end
-    i += 1
-  end
-  new_arr
-end
 
 
-def my_reject(&prc)
-  new_arr = []
-  # self.my_each(&prc)
-  i = 0
-  while i < self.length
-    if !prc.call(self[i])
-      new_arr << self[i]
+    def my_reject(&prc)
+      new_arr = []
+        self.my_each do |ele|
+            new_arr << ele if !prc.call(ele)
+        end
+        new_arr
     end
-    i += 1
-  end
-  new_arr
+
+
+    def my_any?(&prc)
+      i = 0
+      while i < self.length
+        return true if prc.call(self[i])
+        i+=1
+      end
+      return false
+    end
+
+    def my_all?(&prc)
+      i = 0
+      while i < self.length
+        return false if !prc.call(self[i])
+        i+=1
+      end
+      return true
+    end
+
 end
 
-# def my_any(&prc)
-#   i = 0
-#   while i < self.length
-#     if prc.call(self[i])
-#       return true
+class 2DArray
+
+    def my_flatten
+
 end
 
-p a = [1, 2, 3]
-p a.my_reject { |num| num > 1 } # => [1]
-p a.my_reject { |num| num == 4 } # => [1, 2, 3]
+# p a = [1, 2, 3]
+# p a.my_any? { |num| num > 1 } # => true
+# p a.my_any? { |num| num == 4 } # => false
+# p a.my_all? { |num| num > 1 } # => false
+# p a.my_all? { |num| num < 4 } # => true
+
+# p a = [1, 2, 3]
+# p a.my_reject { |num| num > 1 } # => [1]
+# p a.my_reject { |num| num == 4 } # => [1, 2, 3]
 
 # p a = [1, 2, 3]
 # p a.my_select { |num| num > 1 } # => [2, 3]
