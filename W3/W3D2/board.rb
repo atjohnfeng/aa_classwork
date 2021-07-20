@@ -10,6 +10,10 @@ class Board
         @board[pos[0]][pos[1]]
     end
 
+    def []=(pos, value)
+        @board[pos[0]][pos[1]] = value
+    end
+
     def place_random_cards
         
         # while self.empty_positions?
@@ -30,10 +34,10 @@ class Board
             random_card = :X
             available_positions = empty_positions
             pos_1 = available_positions.sample
-            @board[pos_1] = random_card
+            @board[pos_1[0]][pos_1[1]] = random_card
             available_positions = empty_positions
             pos_2 = available_positions.sample
-            @board[pos_2] = random_card
+            @board[pos_2[0]][pos_2[1]] = random_card
         end
             
     end
