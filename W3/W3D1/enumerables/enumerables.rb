@@ -59,6 +59,7 @@ end
 
 
 p [1, 2, 3, [4, [5, 6]], [[[7]], 8]].my_flatten # => [1, 2, 3, 4, 5, 6, 7, 8]
+
 # p a = [1, 2, 3]
 # p a.my_any? { |num| num > 1 } # => true
 # p a.my_any? { |num| num == 4 } # => false
