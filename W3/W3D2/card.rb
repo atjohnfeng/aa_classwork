@@ -5,8 +5,6 @@ class Card
     def initialize(face_value)
         @hidden = true 
         @face_value = face_value
-    end 
-
-
+    end
 
 end 
