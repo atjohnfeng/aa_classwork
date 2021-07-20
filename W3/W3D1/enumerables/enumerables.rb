@@ -47,14 +47,18 @@ class Array
       return true
     end
 
-end
-
-class 2DArray
-
     def my_flatten
+      return [self] if self.type_of != Array
+      self.my_each do |sub| 
+        if sub.type_of == Array
+          sub.my_flatten
+        end
+      end
 
 end
 
+
+p [1, 2, 3, [4, [5, 6]], [[[7]], 8]].my_flatten # => [1, 2, 3, 4, 5, 6, 7, 8]
 # p a = [1, 2, 3]
 # p a.my_any? { |num| num > 1 } # => true
 # p a.my_any? { |num| num == 4 } # => false
