@@ -9,8 +9,14 @@ class Card
         @face_value = POSSIBLE_CARDS.sample
     end
 
+    def reveal
+        @hidden = false
+    end
 
-
+    def generate_second_card(value)
+        Card.new
+        @face_value = value
+    end
 
 
 end 

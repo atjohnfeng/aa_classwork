@@ -31,7 +31,7 @@ class Board
         @board[pos_1[0]][pos_1[1]] = random_card
         available_positions = empty_positions
         pos_2 = available_positions.sample
-        @board[pos_2[0]][pos_2[1]] = random_card
+        @board[pos_2[0]][pos_2[1]] = generate_second_card(random_card.face_value)
     end 
 
     def render 
@@ -53,9 +53,6 @@ class Board
         #     p " #{i} #{row[0].face_value} #{row[1].face_value} #{row[2].face_value} #{row[3].face_value}" q
         # end
     end 
-
-
-
 
     def empty_positions
         empty_positions = []
@@ -79,5 +76,21 @@ class Board
     def empty?(pos)
         @board[pos] == :E 
     end 
+
+    def won?
+        @board.each do |row|
+            row.each do |card|
+                return false if card.hidden
+            end
+        end
+        return true
+    end
+
+    def reveal(pos)
+        if @board[pos[0]][pos[1]].hidden
+            @board[pos[0]][pos[1]].reveal
+            return @board[pos[0]][pos[1]].face_value
+        end
+    end
 
 end
