@@ -1,3 +1,7 @@
+require_relative "card.rb"
+require_relative "game.rb"
+
+
 class Board
 
     attr_reader :board
@@ -15,32 +19,43 @@ class Board
     end
 
     def place_random_cards
-        
-        # while self.empty_positions?
-        #     random_card = Card.new 
-        #     row = rand(0...4)
-        #     col = rand(0...4)
-        #     row_2 = rand(0...4)
-        #     col_2 = rand(0...4)
-        #     pos = [row, col]
-        #     pos_2 = [row_2, col_2]
-        #     if self.empty?(pos) && self.empty?(pos_2)
-        #         self[pos] = random_card
-        #         self[pos_2] = random_card
-        #     end
-        # end
-
-        while full?
-            random_card = :X
-            available_positions = empty_positions
-            pos_1 = available_positions.sample
-            @board[pos_1[0]][pos_1[1]] = random_card
-            available_positions = empty_positions
-            pos_2 = available_positions.sample
-            @board[pos_2[0]][pos_2[1]] = random_card
-        end
-            
+        while !self.full?
+            generate_pair
+        end 
     end
+
+    def generate_pair
+        random_card = Card.new
+        available_positions = empty_positions
+        pos_1 = available_positions.sample
+        @board[pos_1[0]][pos_1[1]] = random_card
+        available_positions = empty_positions
+        pos_2 = available_positions.sample
+        @board[pos_2[0]][pos_2[1]] = random_card
+    end 
+
+    def render 
+        rows = Array.new(4) {Array.new}
+        puts "  0 1 2 3" 
+        @board.each_with_index do |row, i|
+            (0...4).each do |i2|
+                if row[i2].hidden
+                    rows[i] << ' '
+                else 
+                    rows[i] << row[i2].face_value
+                end 
+            end 
+        end 
+        rows.each_with_index do |row, i|
+            puts i.to_s + ' ' + row.join(' ')
+        end 
+        # @board.each_with_index do |row, i|
+        #     p " #{i} #{row[0].face_value} #{row[1].face_value} #{row[2].face_value} #{row[3].face_value}" q
+        # end
+    end 
+
+
+
 
     def empty_positions
         empty_positions = []
@@ -53,9 +68,9 @@ class Board
     end
 
     def full?
-        @board.each do |row|
+         @board.each do |row|
             (0...4).each do |i|
-                return false if row[i] != :E 
+                return false if row[i] == :E 
             end 
         end 
         return true 

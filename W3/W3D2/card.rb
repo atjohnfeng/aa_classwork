@@ -2,9 +2,15 @@ class Card
 
     POSSIBLE_CARDS = ('a'..'z').to_a
 
-    def initialize(face_value)
+    attr_reader :face_value, :hidden
+
+    def initialize
         @hidden = true 
-        @face_value = face_value
+        @face_value = POSSIBLE_CARDS.sample
     end
+
+
+
+
 
 end 
