@@ -1,3 +1,4 @@
+require 'byebug'
 #warmup
 def range(start, final)
     result= []
@@ -154,30 +155,32 @@ end
 # # => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 def permutations(array)
-
-    # subarray = array[1..-1]
-    # results << [array, ([array[0]].concat(subarray.reverse)), *permutations(subarray.concat([array[0]]))]
-    # results
-
-    # return array if array.length == 2
-    # results = [array, [array[0], array[1..-1].reverse].flatten]
-    # results << (permutations(array[1..-1]) << array[0])
-    # results
-
-    return array if array.length == 2
-
-    results = []
-
-    array.each_with_index do |static, i|
-        ele = [static] << array[0...i] + array[i+1..-1]
-        ele2 = [static] << (array[0...i] + permutations(array[i+1..-1])).reverse
-        results << ele.flatten << ele2.flatten
+    if array.length == 1
+        return [array]
     end
-
-    results
-
+    perm_list = [] 
+    array.each do |ele|
+        remaining_elements = array.select {|x| x != ele}
+        sub_perms = permutations(remaining_elements) 
+        sub_perms.each do |ele2|
+            perm_list << ([ele] + ele2)
+        end
+    end
+    return perm_list
 end
 
-p permutations([1, 2, 3, 4]) # => [[1, 2, 3], [1, 3, 2],
+# p permutations([1, 2, 3, 4]) # => [[1, 2, 3], [1, 3, 2],
                             # [2, 1, 3], [2, 3, 1],
                             # [3, 1, 2], [3, 2, 1]]  
+
+def num_occur(array, target)
+    return 1 if array.length == 1 && array[0] == target
+    return 0 if array.length == 1
+    if array[0] == target
+        return 1 + num_occur(array[1..-1], target)
+    else 
+        num_occur(array[1..-1], target)
+    end
+end
+
+p num_occur([4, 5, 2, 2, 2, 8, 2], 2)

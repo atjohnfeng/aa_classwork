@@ -13,10 +13,10 @@ class Card
         @hidden = false
     end
 
-    def generate_second_card(value)
-        Card.new
-        @face_value = value
-    end
+    # def generate_second_card(value)
+    #     Card.new
+    #     @face_value = value
+    # end
 
 
 end 
