@@ -1,37 +1,75 @@
-require_relative "piece.rb"
+require "singleton"
 
-class Board 
+module Slideable 
     
-    def initialize
-        @rows = Array.new(8) { Array.new(8) }
-        @null_piece = NullPiece
-        @rows.each_with_index do |row, idx|
-            if [1, 2, 6, 7].include?(idx)
-                row.each_with_index do |space, idx2|
-                    row[idx2] = Piece.new 
-                end
-            else
-                row.each_with_index do |space, idx2|
-                    row[idx2] = NullPiece.instance
-                end
-
-            end
+    HORIZONTAL_DIRS = [ [1, 0],[0, 1],[-1, 0],[1, 0] ]
+    DIAGONAL_DIRS = [ [1, -1],[1, 1],[-1, 1],[-1, -1] ]
+    
+    def horizontal_dirs 
+        HORIZONTAL_DIRS
+    end
+    
+    def diagonal_dirs 
+        DIAGONAL_DIRS
+    end
+    
+    def move_dirs
+    
+    end
+    
+    def moves
+        moves_arr = []
+        valid_dirs = move_dirs
+        valid_dirs.each do |dir|
         end
     end
-
-    def [](pos)
-        @rows[pos[0]][pos[1]]
+    
+    def grow_unblocked_moves_in_dir(dx, dy)
+        cur_pos = pos.dup
+        results = []
+        loop do 
+            cur_pos = [cur_pos[0]+dx, cur_pos[1]+dy]
+            results << cur_pos if cur_pos.all? { |ele| ele.between?(0, 7) } && !board[cur_pos].is_a?(NullPiece)
+            if !(cur_pos.all? { |ele| ele.between?(0, 7) } || board[cur_pos].is_a?(NullPiece))
+                break
+            end
+        end
+        results
     end
 
-    def []=(pos, value)
-        @rows[pos[0]][pos[1]] = value
+end 
+
+module Stepable
+
+end
+
+
+class Piece 
+
+    def initialize(color, board, pos)
+        @color = color 
+        @board = board 
+        @pos = pos 
+    end
+    
+    def move_dirs
+    
     end
 
-    def move_piece(start_pos, end_pos)
-        raise 'There is no piece here.' if start_pos.any? { |ele| !ele.between?(0..7) } || self[start_pos].is_a?(NullPiece)
-        raise 'Cannot move there.' if end_pos.any? { |ele| !ele.between?(0..7) }
-        self[end_pos] = self[start_pos]
-        self[start_pos] = NullPiece.instance
+    def to_s 
+        
+    end 
+
+    private
+    attr_reader :board, :pos
+
+end
+
+class NullPiece < Piece
+    include Singleton
+    
+    def initialize 
+        
     end
 
 end
