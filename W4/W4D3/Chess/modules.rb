@@ -18,11 +18,8 @@ module Slideable
     def moves
         moves_arr = []
         valid_dirs = move_dirs
-        valid_dirs.each do |dir|
-            
-            p "In Iteration"
+        valid_dirs.each do |dir|            
             moves_arr += grow_unblocked_moves_in_dir(dir[0], dir[1])
-            p moves_arr
         end
         moves_arr
     end

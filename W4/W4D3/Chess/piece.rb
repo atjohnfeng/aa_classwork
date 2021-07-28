@@ -12,7 +12,7 @@ class Piece
     def pos=(new_pos)
         @pos = new_pos
     end
-
+    
     def move_dirs
     
     end
