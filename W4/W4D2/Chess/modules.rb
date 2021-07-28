@@ -1,6 +1,6 @@
 module Slideable 
     
-    HORIZONTAL_DIRS = [ [1, 0],[0, 1],[-1, 0],[1, 0] ]
+    HORIZONTAL_DIRS = [ [1, 0],[0, 1],[-1, 0],[0, -1] ]
     DIAGONAL_DIRS = [ [1, -1],[1, 1],[-1, 1],[-1, -1] ]
     
     def horizontal_dirs 
@@ -29,8 +29,8 @@ module Slideable
         results = []
         loop do 
             cur_pos = [cur_pos[0]+dx, cur_pos[1]+dy]
-            results << cur_pos if cur_pos.all? { |ele| ele.between?(0, 7) } && board[new_pos].color != color 
-            if !cur_pos.all? { |ele| ele.between?(0, 7) } || board[new_pos].color == color 
+            results << cur_pos if cur_pos.all? { |ele| ele.between?(0, 7) } && board[cur_pos].color != color 
+            if !cur_pos.all? { |ele| ele.between?(0, 7) } || board[cur_pos].color == color 
                 break
             end
         end
@@ -57,6 +57,5 @@ module Stepable
         end
         moves_arr
     end
-
 
 end
