@@ -1,4 +1,5 @@
 require "io/console"
+require_relative 'board.rb'
 
 KEYMAP = {
   " " => :space,
@@ -33,14 +34,15 @@ MOVES = {
 class Cursor
 
   attr_reader :cursor_pos, :board
-
+  
   def initialize(cursor_pos, board)
     @cursor_pos = cursor_pos
     @board = board
+    @selected = false
   end
-
+  
   def get_input
-    key = KEYMAP[read_char]
+    key = [read_char]
     handle_key(key)
   end
 
@@ -51,7 +53,7 @@ class Cursor
 
     STDIN.raw! # in raw mode data is given as is to the program--the system
                  # doesn't preprocess special characters such as control-c
-
+    
     input = STDIN.getc.chr # STDIN.getc reads a one-character string as a
                              # numeric keycode. chr returns a string of the
                              # character represented by the keycode.
@@ -65,20 +67,34 @@ class Cursor
                                                    # asynchronously; it raises an
                                                    # error if no data is available,
                                                    # hence the need for rescue
-
+      
       input << STDIN.read_nonblock(2) rescue nil
     end
-
+    
     STDIN.echo = true # the console prints return values again
     STDIN.cooked! # the opposite of raw mode :)
-
+    
     return input
   end
-
+  
   def handle_key(key)
-  end
-
-  def update_pos(diff)
+    case key
+    when :return, :space
+      return cursor_pos
+    when :left, :right, :up, :down
+      update_pos(MOVES[key])
+      return nil
+    when :ctrl_c
+      Process.exit(0)
+    end
   end
   
+  def update_pos(diff)
+    new_pos = [cursor_pos[0] + diff[0], cur_pos[1] + diff[1]]
+    return new_pos if new_pos.all? { |ele| ele.between?(0, 7) }
+  end
+
+  def toggle_selected
+    @selected == true ? @selected = false : @selected = true
+  end
 end
