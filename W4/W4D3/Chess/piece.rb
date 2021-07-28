@@ -9,46 +9,10 @@ class Piece
         @pos = pos 
     end
     
-    def move_dirs
-    
+    def pos=(new_pos)
+        @pos = new_pos
     end
 
-    def to_s 
-        
-    end 
-
-    private
-    attr_reader :board, :pos, :color 
-
-end
-
-class NullPiece < Piece
-    include Singleton
-    
-    def initialize 
-        super(nil, nil, nil)
-    end
-
-    def symbol
-        ""
-    end
-
-    def moves
-        []
-    end
-
-end
-require "singleton"
-require_relative "modules.rb"
-
-class Piece 
-
-    def initialize(color, board, pos)
-        @color = color 
-        @board = board 
-        @pos = pos 
-    end
-    
     def move_dirs
     
     end
@@ -190,11 +154,11 @@ class Pawn < Piece
     def forward_steps
         results = []
         possible = [[pos[0]+forward_dir,pos[1]]]
-        if at_start_row
+        if at_start_row?
             possible << [pos[0]+(forward_dir*2),pos[1]]
         end
         possible.each do |new_pos|
-            if new_pos.all? { |ele| ele.between?(0,7) } && board[new_pos].color != color
+            if new_pos.all? { |ele| ele.between?(0,7) } && board[new_pos].is_a?(NullPiece)
                 results << new_pos
             end
         end
@@ -205,7 +169,7 @@ class Pawn < Piece
         results = []
         [-1,1].each do |i|
             new_pos = [pos[0]+forward_dir,pos[1]+i]
-            if new_pos.all? { |ele| ele.between?(0,7) } && board[new_pos].color != color
+            if new_pos.all? { |ele| ele.between?(0,7) } && !board[new_pos].is_a?(NullPiece) && board[new_pos].color != color
                 results << new_pos
             end 
         end
@@ -213,19 +177,3 @@ class Pawn < Piece
     end
 
 end 
-class Rook < Piece
-include Slideable
-
-    def initialize(color, board, pos)
-        super(color, board, pos)
-    end
-
-    def symbol
-        :R
-    end
-
-    def move_dirs
-        horizontal_dirs
-    end
-
-end

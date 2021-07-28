@@ -19,7 +19,10 @@ module Slideable
         moves_arr = []
         valid_dirs = move_dirs
         valid_dirs.each do |dir|
+            
+            p "In Iteration"
             moves_arr += grow_unblocked_moves_in_dir(dir[0], dir[1])
+            p moves_arr
         end
         moves_arr
     end
@@ -51,11 +54,13 @@ module Stepable
         cur_pos = pos.dup 
         valid_moves.each do |move|
             new_pos = [cur_pos[0] + move[0], cur_pos[1] + move[1]]
-            if new_pos.all? { |ele| ele.between(0, 7) } && board[new_pos].color != color 
+            # p new_pos
+            if new_pos.all? { |ele| ele.between?(0, 7) } && board[new_pos].color != color 
                 moves_arr << new_pos
             end
         end
         moves_arr
     end
+
 
 end
