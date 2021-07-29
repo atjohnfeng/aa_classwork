@@ -1,7 +1,7 @@
 require_relative "piece.rb"
 
 class Board 
-
+    
     attr_reader :rows
     
     def initialize
@@ -65,7 +65,15 @@ class Board
     end
     
     def checkmate(color)
+        
+    end
 
+    def dup
+        Marshal.load(Marshal.dump(self))
+    end
+
+    def valid_pos?(pos)
+        pos.all? { |ele| ele.between?(0, 7) }
     end
 
 end

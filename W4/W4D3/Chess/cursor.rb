@@ -78,6 +78,7 @@ class Cursor
   end
   
   def handle_key(key)
+    key = key[0]
     case key
     when :return, :space
       return cursor_pos
@@ -90,11 +91,14 @@ class Cursor
   end
   
   def update_pos(diff)
-    new_pos = [cursor_pos[0] + diff[0], cur_pos[1] + diff[1]]
-    return new_pos if new_pos.all? { |ele| ele.between?(0, 7) }
+    new_pos = [cursor_pos[0] + diff[0], cursor_pos[1] + diff[1]]
+    if board.valid_pos?(new_pos)
+        @cursor_pos = new_pos
+    end
   end
 
   def toggle_selected
     @selected == true ? @selected = false : @selected = true
   end
+  
 end

@@ -58,6 +58,5 @@ module Stepable
         end
         moves_arr
     end
-
-
+    
 end
