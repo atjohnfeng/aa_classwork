@@ -51,8 +51,19 @@
 #Phase 2 - 
 def largest_contiguous_subsum(arr)
 
-    
-
+    largest_sum = arr.first
+    curr_sum = arr.first
+    (1...arr.length).each do |i|
+      if curr_sum + arr[i] > 0  
+        curr_sum += arr[i] 
+      elsif curr_sum + arr[i] < 0
+        if curr_sum > largest_sum 
+          largest_sum = curr_sum
+        end
+        curr_sum = 0
+      end
+    end
+    largest_sum
 end
 
 list = [2, 3, -6, 7, -6, 7]
