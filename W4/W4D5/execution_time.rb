@@ -59,14 +59,15 @@ def largest_contiguous_subsum(arr)
             if curr_sum > largest_sum 
                 largest_sum = curr_sum
             end 
-        elsif curr_sum + arr[i] < 0
+        else
             if arr[i] > largest_sum 
-            largest_sum = arr[i]
+                largest_sum = arr[i]
             end 
             curr_sum = 0
         end
     end
     largest_sum
+
 end
 
 list = [2, 3, -6, 7, -6, 7]
