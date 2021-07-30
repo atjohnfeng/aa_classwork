@@ -55,12 +55,12 @@ def largest_contiguous_subsum(arr)
     curr_sum = arr.first
     (1...arr.length).each do |i|
       if curr_sum + arr[i] > 0  
-        curr_sum += arr[i] 
-      elsif curr_sum + arr[i] < 0
+        curr_sum += arr[i]
         if curr_sum > largest_sum 
           largest_sum = curr_sum
-        end
-        curr_sum = 0
+        end 
+        else curr_sum + arr[i] < 0
+            curr_sum = 0
       end
     end
     largest_sum
