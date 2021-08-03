@@ -139,11 +139,3 @@ def sparse_continents
       )
   SQL
 end
-
- # continent IN(
-      #   SELECT
-      #     continent
-      #   FROM
-      #     countries
-      
-      # )
