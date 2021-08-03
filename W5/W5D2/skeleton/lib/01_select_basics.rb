@@ -67,7 +67,7 @@ def scandinavia
     FROM
       countries
     WHERE
-      name = 'Denmark' OR name = 'Finland' OR name = 'Norway' OR name = 'Sweden'
+      name IN ('Denmark', 'Finland', 'Norway', 'Sweden')
   SQL
 end
 
