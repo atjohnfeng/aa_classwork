@@ -20,10 +20,16 @@ def harrison_ford
   #
   # Find the id and title of all movies in which Harrison Ford
   # appeared but not as a lead actor
+  # Actor 
+  #   .joins(:movies)
+  #   .where()
+
   Movie
-    .joins(:castings)
+    .joins(:actors)
     .select(:id, :title)
     .where.not(castings: { ord: 1 } )
+    .where(actors: {name: 'Harrison Ford'})
+    
 end
 
 def biggest_cast
@@ -40,6 +46,13 @@ def biggest_cast
   #
   # Find the id and title of the 3 movies with the
   # largest casts (i.e most actors)
+
+  Movie 
+    .joins(:castings)
+    .group('movies.id')
+    .order('COUNT(title) DESC')
+    .limit(3)
+    .select(:id,:title)
 
 end
 
