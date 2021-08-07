@@ -142,14 +142,10 @@ def andrews_films_and_leads
       title, name
     FROM
       movies
-    JOIN
-      castings
-    ON
-      id = movie_id
-    JOIN
-      actors
-    ON
-      castings.actor_id = actors.id
+    JOIN castings
+      ON id = movie_id
+    JOIN actors
+      ON castings.actor_id = actors.id
     WHERE
       movie_id IN(
         SELECT
@@ -173,6 +169,20 @@ def prolific_actors
   # Obtain a list in alphabetical order of actors who've had at least 15
   # starring roles.
   execute(<<-SQL)
+    SELECT
+      name
+    FROM
+      actors
+    JOIN castings
+      ON id = actor_id
+    WHERE
+      ord = 1
+    GROUP BY
+      name
+    HAVING
+      COUNT(ord) >= 15
+    ORDER BY
+      name
   SQL
 end
 
