@@ -16,7 +16,7 @@ end
 
 def costars(name)
   # List the names of the actors that the named actor has ever
-  # appeared with.
+  # appeared with.gi
   # Hint: use a subquery
 
 end
