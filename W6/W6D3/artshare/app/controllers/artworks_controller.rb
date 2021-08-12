@@ -10,8 +10,12 @@ class ArtworksController < ApplicationController
     end
 
     def index
-        @artworks = Artwork.all
-        render json: @artworks
+        if params.has_key?(:artist_id)
+            @artworks = Artwork.where(artist_id: params[:artist_id])
+            @artwork_shares = ArtworkShare.where(viewer_id: params[:artist_id])
+        end
+
+        render json: @artworks, @artwork_shares
     end
 
     def show
@@ -22,15 +26,6 @@ class ArtworksController < ApplicationController
             render json: {error: 'There is no artwork with that id.'}, status: 404
         end
     end
-
-    # def create
-    #     @artwork = Artwork.new(artwork_params)
-    #     if @artwork.save
-    #         redirect_to artwork_url(@artwork)
-    #     else
-    #         render json: @artwork.errors.full_messages, statuquit2
-    #     end
-    # end
 
     def update
         @artwork = Artwork.find_by(id: params[:id])

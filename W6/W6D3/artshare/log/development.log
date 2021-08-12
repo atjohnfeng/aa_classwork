@@ -1685,3 +1685,10 @@ Processing by ArtworksController#show as */*
 Completed 200 OK in 143ms (Views: 62.5ms | ActiveRecord: 13.2ms)
 
 
+  [1m[36mArtworkShare Load (9.3ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares"[0m
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mArtwork Load (74.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  [1m[36mArtworkShare Load (1.6ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares"[0m
+  [1m[36mUser Load (19.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mArtworkShare Load (0.8ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares"[0m
+  [1m[36mArtwork Load (3.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
