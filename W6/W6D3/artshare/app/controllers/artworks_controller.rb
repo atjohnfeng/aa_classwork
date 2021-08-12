@@ -52,7 +52,6 @@ class ArtworksController < ApplicationController
         end
     end
 
-
     private
 
     def artwork_params

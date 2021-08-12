@@ -19,9 +19,10 @@ class CommentsController < ApplicationController
   end
 
   def index
-    if params.has_key?(:user_id)
+    debugger
+    if params[:user_id]
       @comments = Comment.where('user_id = ?', params[:user_id])
-    elsif params.has_key?(:artwork_id)
+    elsif params[:artword_id]
       @comments = Comment.where(artwork_id: params[:artwork_id])
     else
       @comments = Comment.all
@@ -32,7 +33,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comments).permit(:user_id, :artwork_id, :body)
+    params.require(:comment).permit(:user_id, :artwork_id, :body)
   end
 
 end

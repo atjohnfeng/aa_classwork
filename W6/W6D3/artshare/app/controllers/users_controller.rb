@@ -41,7 +41,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    debugger
+    if params.has_key?(:username)
+      @users = User.where('users.username ILIKE ?', params[:username])
+    else
+      @users = User.all
+    end
     render json: @users
   end
 
