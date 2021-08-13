@@ -3,7 +3,7 @@
 class CatsController < ApplicationController
     def index
         @cats = Cat.all
-        render 'index'
+        render :index
     end
 
     def show
@@ -24,7 +24,8 @@ class CatsController < ApplicationController
         if @cat.save
             redirect_to cat_url(@cat)
         else
-            render :new
+            #render :new
+            render plain: "Testing"
         end
     end
 

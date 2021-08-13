@@ -1,6 +1,14 @@
-<ul>
-    <% @cats.each do |c| %>
-        <%= render "cat", c:@cat %> <br>
-    <% end %>
 
+<h1> All The Cats! </h1>
+
+<ul>
+    <% @cats.each do |feline| %>
+    <li> <%= feline.name %> </li>
+    <li> <%= feline.color %> </li>
+    <li> <%= feline.sex %> </li>
+    <li> <%= feline.birth_date %> </li>
+    <li> <%= feline.description %> </li>
+    <li> <a href="<%= cat_url(feline) %>" > Link to profile </a> </li>
+    <br>
+    <% end %>
 </ul>
