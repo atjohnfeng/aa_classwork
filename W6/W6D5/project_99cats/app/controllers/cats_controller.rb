@@ -35,8 +35,17 @@ class CatsController < ApplicationController
     end
 
     def update
-        p Cat.update(cat_params)
-        p '---------------------'
+        @cat = Cat.find_by(id: params[:id])
+        unless @cat
+            render json: {error: "That cat does not exist"}, status: 404
+            return
+        end
+        
+        if Cat.update(cat_params)
+            redirect_to cat_url(@cat)
+        else
+            render json: @cat.errors.full_messages, status: 422
+        end
     end
 
     private

@@ -1,25 +1,25 @@
 <h1>Update Your Cat</h1>
-<form action="/cats/<%=@cat.id%>" method="patch">
+<form action="<%=cat_url(@cat)%>" method="post">
+    <!-- Anything needing updating, editing, etc add this -->
+    <input type="hidden" name="_method" value="patch">
     <label for="name">Name</label>
         <input id="name" type="text" name="cat[name]" value="<%=@cat.name%>"><br>
     <label for="color">Color</label>
         <select id="color" type="text" name="cat[color]">
-            <option disabled selected value="<%=@cat.color%>"><%=@cat.color%></option>
-            <option value='gold'>Gold</option>
-            <option value='gray'>Gray</option>
-            <option value='white'>White</option>
-            <option value='black'>Black</option>
-            <option value='orange'>Orange</option>
+            <option <%= @cat.color == 'gold' ? 'selected' : "" %> value='gold'>Gold</option>
+            <option <%= @cat.color == 'gray' ? 'selected' : "" %> value='gray'>Gray</option>
+            <option <%= @cat.color == 'white' ? 'selected' : "" %> value='white'>White</option>
+            <option <%= @cat.color == 'black' ? 'selected' : "" %> value='black'>Black</option>
+            <option <%= @cat.color == 'orange' ? 'selected' : "" %> value='orange'>Orange</option>
         </select><br>
     <label for='sex'>Sex</label>
         <select id='sex' type='text' name='cat[sex]'>
-            <option disabled selected value="<%=@cat.sex%>"><%=@cat.sex%></option>
-            <option value='M'>Male</option>
-            <option value='F'>Female</option>
+            <option <%= @cat.sex == 'M' ? 'selected' : "" %> value='M'>Male</option>
+            <option <%= @cat.sex == 'F' ? 'selected' : "" %> value='F'>Female</option>
         </select><br>
     <label for='birth_date'>Birth Date</label>
         <input id='birth_date' type='date' name='cat[birth_date]' value="<%=@cat.birth_date%>"><br>
     <label for='description'>Description</label>
-        <textarea id='description' type='text' name=cat[description]><%=@cat.description%></textarea><br>
+        <textarea id='description' type='text' name="cat[description]"><%=@cat.description%></textarea><br>
     <input type="submit" value="Update Cat">
 </form>
