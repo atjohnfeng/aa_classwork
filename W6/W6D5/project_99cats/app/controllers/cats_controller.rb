@@ -20,13 +20,23 @@ class CatsController < ApplicationController
     end
 
     def create
+        cat_params[:birth_date] = Date.parse(cat_params[:birth_date])
         @cat = Cat.new(cat_params)
         if @cat.save
             redirect_to cat_url(@cat)
         else
-            #render :new
-            render plain: "Testing"
+            render :new
         end
+    end
+
+    def edit
+        @cat = Cat.find_by(id: params[:id])
+        render :edit
+    end
+
+    def update
+        p Cat.update(cat_params)
+        p '---------------------'
     end
 
     private
