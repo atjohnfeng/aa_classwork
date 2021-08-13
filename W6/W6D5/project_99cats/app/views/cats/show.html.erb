@@ -1,2 +1,28 @@
-<%= "cat", cat:@cat %>
-<%= "cat_cat.html.erb", cat:@cat %>
+<table>
+
+    <thead>
+        <tr>
+            <th colspan="2"><%=@cat.name %></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Color:</td>
+            <td><%=@cat.color%>
+        </tr>
+        <tr>
+            <td>Birth Date:</td>
+            <td><%=@cat.birth_date%>
+        </tr>
+        <tr>
+            <td>Sex:</td>
+            <td><%=@cat.sex%>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><%=@cat.description%>
+        </tr>
+    </tbody>
+
+</table>

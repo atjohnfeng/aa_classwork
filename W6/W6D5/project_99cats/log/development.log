@@ -600,3 +600,47 @@ Did you mean?  @cats:
   app/views/cats/index.html.erb:2:in `_app_views_cats_index_html_erb___1767103417470882223_14340'
   app/controllers/cats_controller.rb:6:in `index'
 
+Started GET "/cats" for ::1 at 2021-08-13 14:10:18 -0700
+  [1m[35m (10.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/John/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as */*
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (58.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:2
+  Rendered cats/_cat.html.erb (650.4ms)
+  Rendered cats/index.html.erb within layouts/application (913.7ms)
+Completed 500 Internal Server Error in 1146ms (ActiveRecord: 85.3ms)
+
+
+
+NameError - undefined local variable or method `cat' for #<#<Class:0x00007fc5be2571d8>:0x00007fc5bd653b98>
+Did you mean?  @cats:
+  app/views/cats/_cat.html.erb:4:in `_app_views_cats__cat_html_erb___2094527622888973967_70243631649740'
+  app/views/cats/index.html.erb:3:in `block in _app_views_cats_index_html_erb___1596467530591935367_70243662653060'
+  app/views/cats/index.html.erb:2:in `_app_views_cats_index_html_erb___1596467530591935367_70243662653060'
+  app/controllers/cats_controller.rb:6:in `index'
+
+Started GET "/cats/5" for ::1 at 2021-08-13 14:10:36 -0700
+Processing by CatsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mCat Load (276.8ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:10
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 7370ms (Views: 6985.1ms | ActiveRecord: 287.5ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-08-13 14:22:38 -0700
+Processing by CatsController#new as */*
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 203ms (Views: 200.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-08-13 14:26:56 -0700
+Processing by CatsController#new as */*
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 270ms (Views: 267.6ms | ActiveRecord: 0.0ms)
+
+
