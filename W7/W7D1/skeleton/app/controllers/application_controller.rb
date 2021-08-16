@@ -11,6 +11,16 @@ class ApplicationController < ActionController::Base
         session[:session_token] = user.reset_session_token!
     end
 
+    def login_user(user)
+        @user = User.find_by_credentials(params[:user][:user_name], params[:user][:password])
+        if @user
+            login(@user)
+            redirect_to cats_url
+        else
+            render :new
+        end
+    end
+
     def logged_in?
         !!current_user
     end
@@ -20,7 +30,7 @@ class ApplicationController < ActionController::Base
     end
 
     def require_logged_out
-        redirect_to users_url if logged_in?
+        redirect_to cats_url if logged_in?
     end
 
     def logout!
