@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     validates :user_name, presence: true, uniqueness: true
     validates :password_digest, presence: true
-    validates :session_token, uniqueness: { scope: :user_name }
+    validates :session_token, uniqueness: true
 
     after_initialize :ensure_session_token
 
