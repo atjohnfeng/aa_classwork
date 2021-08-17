@@ -3,8 +3,9 @@ class CatsController < ApplicationController
 
   def verify_owner
     @cat = Cat.find_by(id: params[:id])
-    @owned_cats = current_user.cats 
-    redirect_to new_session_url if !@owned_cats.include?(@cat)
+    @current_user = current_user
+    @owned_cats = @current_user.cats 
+    redirect_to new_session_url if !@owned_cats.include?(self) || !@current_user
   end
 
   def index
