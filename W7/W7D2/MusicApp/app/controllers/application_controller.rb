@@ -1,14 +1,18 @@
 class ApplicationController < ActionController::Base
 
+    skip_forgery_protection
+
+    helper_method :current_user, :logged_in?
+
     def login(user)
         session[:session_token] = user.reset_session_token!
     end
     
     def log_in!(user)
-        @user = User.find_by_credentials(params[:user][:user_name], params[:user][:password])
-        if @user
-            login(@user)
-            render json: 'You have been logged in.'
+        user = User.find_by_credentials(params[:user][:email], params[:user][:password])
+        if user
+            login(user)
+            redirect_to user_url(user)
         else
             render :new
         end
@@ -22,6 +26,10 @@ class ApplicationController < ActionController::Base
         current_user.reset_session_token if logged_in?
         session[:session_token] = nil
         @current_user = nil
+    end
+
+    def logged_in?
+        !!current_user
     end
 
 end

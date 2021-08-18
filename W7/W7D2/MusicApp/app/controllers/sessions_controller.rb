@@ -1,15 +1,14 @@
 class SessionsController < ApplicationController
 
     def new
-        user = User.new
         render :new
     end
 
    def create
-        user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+        user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if user
             login(user)
-            render json: 'You have been logged in'
+            redirect_to user_url(user)
         else
             render :new
         end
