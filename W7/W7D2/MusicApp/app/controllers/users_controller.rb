@@ -5,7 +5,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        user
+        user = User.find(params[:id])
+        render :show
     end
 
     def create
