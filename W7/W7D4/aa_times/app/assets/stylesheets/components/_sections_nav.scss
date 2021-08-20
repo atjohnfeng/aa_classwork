@@ -1,0 +1,21 @@
+.sections-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding: 5px;
+    border-bottom: lightgray solid 1px;
+}
+
+.sections-nav ul li {
+    padding: 0px 5px 0px 5px;
+}
+
+.sections-nav ul li a:hover {
+    background-color: lightgray;
+}
+
+.sections-nav ul li a#all-link:hover {
+    background-color: white;
+    text-decoration: underline;
+}
