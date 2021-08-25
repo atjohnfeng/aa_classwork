@@ -50,10 +50,11 @@ Board.prototype.isValidPos = function (pos) {
  * throwing an Error if the position is invalid.
  */
 Board.prototype.getPiece = function (pos) {
-  if (this[pos[0]][pos[1]]) {
-    return this[pos[0]][pos[1]];
-  } else {
-    Error('Position is invalid');
+  if (this.isValidPos(pos)) {
+    let piece = this[pos[0]][pos[1]];
+    if (piece !== undefined) {
+      return piece;
+    }
   }
 };
 
