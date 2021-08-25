@@ -1,21 +1,21 @@
 /* PHASE 0: Sidebar */
-.content-sidebar .profile-link {
+
+.profile-picture {
     display: block;
     position: relative;
-}
-
-.content-sidebar img {
     margin-top: -120px;
     border: 1px solid black;
     border-radius: 5%;
 }
 
-.content-sidebar .profile-info {
-    padding: 5px;
+.profile-info {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .profile-info h4 {
     font-size: 24px;
+    line-height: 0px;
 }
 
 .content-sidebar ul:first-child {
@@ -23,7 +23,7 @@
 }
 
 .content-sidebar li {
-    padding: 5px;
+    padding: 6px;
     font-weight: bold;
     border-bottom: 1px solid #C9CCD5;
 }
