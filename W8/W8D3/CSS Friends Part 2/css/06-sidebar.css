@@ -1,0 +1,9 @@
+/* PHASE 0: Sidebar */
+.content-sidebar .profile-link {
+    display: block;
+    position: relative;
+}
+
+.content-sidebar img {
+    margin-top: -120px;
+}
