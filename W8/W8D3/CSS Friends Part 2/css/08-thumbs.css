@@ -1,2 +1,11 @@
 /* PHASE 2: Thumbs */
 
+.thumb img {
+    max-width: 50px;
+}
+
+.profile-friends {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
