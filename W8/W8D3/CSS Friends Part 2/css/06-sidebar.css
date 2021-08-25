@@ -6,5 +6,24 @@
 
 .content-sidebar img {
     margin-top: -120px;
+    border: 1px solid black;
+    border-radius: 5%;
 }
 
+.content-sidebar .profile-info {
+    padding: 5px;
+}
+
+.profile-info h4 {
+    font-size: 24px;
+}
+
+.content-sidebar ul:first-child {
+    border-top: 1px solid #C9CCD5;
+}
+
+.content-sidebar li {
+    padding: 5px;
+    font-weight: bold;
+    border-bottom: 1px solid #C9CCD5;
+}
