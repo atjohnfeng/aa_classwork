@@ -1,0 +1,50 @@
+.clock {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Barlow Condensed';
+    font-size: 50px;
+    list-style: none;
+    width: 700px;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: orange;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+#time {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#date {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#list-tabs {
+    display: flex;
+}
+
+#list-tabs h1 {
+    border: 1px solid black;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+#list-tabs h1:hover {
+    background-color: green;
+}
