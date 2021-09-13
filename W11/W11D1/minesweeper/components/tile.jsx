@@ -16,7 +16,7 @@ class Tile extends React.Component {
         if (e.altKey) {
             flag = true;
         }
-        this.props.onUpdate(flag);
+        this.props.updateGame(this.state.tile, flag);
     }
 
     checkElement(){

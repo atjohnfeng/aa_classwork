@@ -13,15 +13,30 @@ class Game extends React.Component {
         this.updateGame = this.updateGame.bind(this)
     }
 
-    updateGame() {
-        
+    updateGame(tile, bool) {
+        if (bool){
+            tile.toggleFlag();
+        } else {
+            tile.explore();
+        }
+        this.setState({board: this.state.board})
     }
+
+    end(){
+        if (this.state.board.lost()){
+            return <div>YOU LOST IT ALL</div>
+        } else if (this.state.board.won()){
+            return <div>YOU WON</div>
+        }
+    }
+
 
     render() {
         return (
         <div>
-        <Board currentBoard={this.state.board} onUpdate={this.updateGame}>
-        </Board>
+            <h1>MINESWEEPER</h1>
+            {this.end()}
+            <Board currentBoard={this.state.board} updateGame={this.updateGame} />
         </div>
         )
     }
