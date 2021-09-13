@@ -6,14 +6,13 @@ class Board extends React.Component{
         super(props)
     }
     render(){
-        // console.log(this.props)
         return (
-            <div>
+            <div className="grid">
                 {this.props.currentBoard.grid.map((tiles, i) =>{
                     return(
-                    <div key={i}>
+                    <div key={i} className="row">
                         {tiles.map((tile, j) =>{
-                            return <Tile onChange={this.props.updateGame} name={tile} board={this.props.currentBoard} key={j} pos={[i,j]}/>
+                            return <Tile onUpdate={this.props.updateGame} name={tile} board={this.props.currentBoard} key={j} pos={[i,j]}/>
                         })}
                     </div>
                     )

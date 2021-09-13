@@ -1,0 +1,28 @@
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.tile {
+    padding: 5px;
+    min-width: 10px;
+    min-height: 10px;
+}
+
+.explored, .bombed {
+    border-style: inset;
+}
+
+.unexplored, .flagged {
+    border-style: outset;
+}

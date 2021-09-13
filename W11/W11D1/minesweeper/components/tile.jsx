@@ -6,31 +6,34 @@ class Tile extends React.Component {
         super(props);
         this.state = {
             tile: new Minesweeper.Tile(this.props.board, this.props.pos),
-            bombed: false,
-            explored: false,
-            flagged: false
+            status: 'unexplored'
         }
         this.clickHandler = this.clickHandler.bind(this)
     }
 
-    clickHandler(){
-        let newTile = this.state.tile
-        // console.log(newTile)
-        newTile.explore();
-        this.setState({explored: true})
+    clickHandler(e){
+        let flag = false;
+        if (e.altKey) {
+            flag = true;
+        }
+        this.props.onUpdate(flag);
     }
 
     checkElement(){
-        if (this.state.explored){
-
+        if (this.state.tile.bombed) {
+            return '💣'
+        } else if (this.state.tile.flagged) {
+            return '🚩'
+        } else if (this.state.tile.revealed) {
+            return this.state.tile.adjacentBombCount()
         } else {
-
+            return ''
         }
     }
 
     render() {
         return (
-            <div onClick={this.clickHandler}>
+            <div onClick={this.clickHandler} className={`tile ${this.state.status}`}>
                 {this.checkElement()}    
             </div>
         )
