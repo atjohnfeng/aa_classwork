@@ -14,7 +14,7 @@ class Game extends React.Component {
     }
 
     updateGame(tile, bool) {
-        if (bool){
+        if (bool) {
             tile.toggleFlag();
         } else {
             tile.explore();
