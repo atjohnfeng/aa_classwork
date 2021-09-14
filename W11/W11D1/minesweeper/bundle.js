@@ -64,11 +64,9 @@ var Board = /*#__PURE__*/function (_React$Component) {
         }, tiles.map(function (tile, j) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], {
             updateGame: _this.props.updateGame,
-            name: tile,
+            tile: tile,
             board: _this.props.currentBoard,
-            key: j,
-            pos: [i, j],
-            bombed: tile.bombed ? true : false
+            key: j
           });
         }));
       }));
@@ -228,10 +226,6 @@ var Tile = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Tile);
 
     _this = _super.call(this, props);
-    _this.state = {
-      tile: new _minesweeper__WEBPACK_IMPORTED_MODULE_1__.Tile(_this.props.board, _this.props.pos),
-      status: 'unexplored'
-    };
     _this.clickHandler = _this.clickHandler.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -245,34 +239,34 @@ var Tile = /*#__PURE__*/function (_React$Component) {
         flag = true;
       }
 
-      this.props.updateGame(this.state.tile, flag);
-    }
-  }, {
-    key: "checkElement",
-    value: function checkElement() {
-      console.log(this.state.tile.bombed);
-
-      if (this.props.bombed && this.state.tile.explored) {
-        return '💣';
-      } else if (this.state.tile.flagged) {
-        return '🚩';
-      } else if (this.state.tile.explored) {
-        if (this.state.tile.adjacentBombCount() > 0) {
-          return this.state.tile.adjacentBombCount();
-        } else {
-          return this.state.tile.explore();
-        }
-      } else {
-        return '';
-      }
+      this.props.updateGame(this.props.tile, flag);
     }
   }, {
     key: "render",
     value: function render() {
+      var status = 'unexplored';
+      var icon = '';
+
+      if (this.props.tile.explored) {
+        if (this.props.tile.bombed) {
+          status = 'bombed';
+          icon = '💣';
+        } else if (this.props.tile.flagged) {
+          status = 'flagged';
+          icon = '🚩';
+        } else {
+          status = 'explored';
+
+          if (this.props.tile.adjacentBombCount() > 0) {
+            icon = this.props.tile.adjacentBombCount();
+          }
+        }
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         onClick: this.clickHandler,
-        className: "tile ".concat(this.state.status)
-      }, this.checkElement());
+        className: "tile ".concat(status)
+      }, icon);
     }
   }]);
 

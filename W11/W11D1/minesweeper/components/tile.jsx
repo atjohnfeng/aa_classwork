@@ -2,12 +2,8 @@ import React from 'react';
 import * as Minesweeper from '../minesweeper';
 
 class Tile extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            tile: new Minesweeper.Tile(this.props.board, this.props.pos),
-            status: 'unexplored'
-        }
+    constructor(props) {
+        super(props)
         this.clickHandler = this.clickHandler.bind(this)
     }
 
@@ -16,30 +12,29 @@ class Tile extends React.Component {
         if (e.altKey) {
             flag = true;
         }
-        this.props.updateGame(this.state.tile, flag);
-    }
-
-    checkElement(){
-        console.log(this.state.tile.bombed);
-        if (this.props.bombed && this.state.tile.explored) {
-            return '💣'
-        } else if (this.state.tile.flagged) {
-            return '🚩'
-        } else if (this.state.tile.explored) {
-            if (this.state.tile.adjacentBombCount() > 0) {
-                return this.state.tile.adjacentBombCount()
-            } else {
-                return this.state.tile.explore();
-            }
-        } else {
-            return ''
-        }
+        this.props.updateGame(this.props.tile, flag);
     }
 
     render() {
+        let status = 'unexplored';
+        let icon = '';
+        if (this.props.tile.explored) {
+            if (this.props.tile.bombed) {
+                status = 'bombed';
+                icon = '💣';
+            } else if (this.props.tile.flagged) {
+                status = 'flagged';
+                icon = '🚩';
+            } else {
+                status = 'explored';
+                if (this.props.tile.adjacentBombCount() > 0) {
+                    icon = this.props.tile.adjacentBombCount();
+                } 
+            }
+        } 
         return (
-            <div onClick={this.clickHandler} className={`tile ${this.state.status}`}>
-                {this.checkElement()}    
+            <div onClick={this.clickHandler} className={`tile ${status}`}>
+                {icon}    
             </div>
         )
     }
