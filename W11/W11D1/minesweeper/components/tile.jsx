@@ -1,5 +1,4 @@
 import React from 'react';
-import * as Minesweeper from '../minesweeper';
 
 class Tile extends React.Component {
     constructor(props) {
@@ -22,16 +21,17 @@ class Tile extends React.Component {
             if (this.props.tile.bombed) {
                 status = 'bombed';
                 icon = '💣';
-            } else if (this.props.tile.flagged) {
-                status = 'flagged';
-                icon = '🚩';
             } else {
                 status = 'explored';
                 if (this.props.tile.adjacentBombCount() > 0) {
                     icon = this.props.tile.adjacentBombCount();
                 } 
             }
-        } 
+        } else if (this.props.tile.flagged) {
+            console.log('hi')
+            status = 'flagged';
+            icon = '🚩';
+        }
         return (
             <div onClick={this.clickHandler} className={`tile ${status}`}>
                 {icon}    
