@@ -1,0 +1,171 @@
+Started GET "/" for ::1 at 2021-09-21 14:42:59 -0700
+
+ActiveRecord::NoDatabaseError - FATAL:  database "BenchBnB_development" does not exist:
+
+Started POST "/__better_errors/308537907ec1a365/variables" for ::1 at 2021-09-21 14:42:59 -0700
+  [1m[35m (624.4ms)[0m  [1m[35mCREATE DATABASE "BenchBnB_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (513.2ms)[0m  [1m[35mCREATE DATABASE "BenchBnB_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-09-21 14:52:16 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/e8221dda18f16205/variables" for ::1 at 2021-09-21 14:52:17 -0700
+Started GET "/" for ::1 at 2021-09-21 14:53:46 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/88fc9b86a16ef87b/variables" for ::1 at 2021-09-21 14:53:47 -0700
+Started GET "/" for ::1 at 2021-09-21 14:53:50 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/de63f0aa4fd4ae05/variables" for ::1 at 2021-09-21 14:53:50 -0700
+Started GET "/" for ::1 at 2021-09-21 14:53:51 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/9ba9b3c1c3d52416/variables" for ::1 at 2021-09-21 14:53:51 -0700
+Started GET "/" for ::1 at 2021-09-21 14:53:53 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/2eb0038c0ca58f3a/variables" for ::1 at 2021-09-21 14:53:53 -0700
+Started GET "/" for ::1 at 2021-09-21 14:53:54 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/16299f443c35aef1/variables" for ::1 at 2021-09-21 14:53:54 -0700
+Started GET "/" for ::1 at 2021-09-21 14:53:55 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/4a9a944d8cfb7101/variables" for ::1 at 2021-09-21 14:53:55 -0700
+Started GET "/" for ::1 at 2021-09-21 14:53:55 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/4cfda18e9723c15f/variables" for ::1 at 2021-09-21 14:53:56 -0700
+Started GET "/" for ::1 at 2021-09-21 14:54:22 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/9526189e26341c58/variables" for ::1 at 2021-09-21 14:54:23 -0700
+Started GET "/" for ::1 at 2021-09-21 14:55:28 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/63eef8a41d766071/variables" for ::1 at 2021-09-21 14:55:29 -0700
+Started GET "/" for ::1 at 2021-09-21 15:02:34 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/e2da1adf1ec3a285/variables" for ::1 at 2021-09-21 15:02:36 -0700
+Started GET "/" for ::1 at 2021-09-21 15:11:38 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/c5aa0a868cb5bf77/variables" for ::1 at 2021-09-21 15:11:40 -0700
+Started GET "/" for ::1 at 2021-09-21 15:12:26 -0700
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 185ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+request.formats: ["text/html"]
+request.variant: []
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/7adf773691fc5d48/variables" for ::1 at 2021-09-21 15:12:27 -0700
+Started GET "/" for ::1 at 2021-09-21 15:12:35 -0700
+Processing by StaticPagesController#root as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template static_pages/root, application/root with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/John/Desktop/App Academy/W12/W12D2/BenchBnB/app/views":
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/bb113190855bea4a/variables" for ::1 at 2021-09-21 15:12:35 -0700
+Started GET "/" for ::1 at 2021-09-21 15:13:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 2901ms (Views: 2900.0ms | ActiveRecord: 0.0ms)
+
+
