@@ -218,3 +218,254 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 82ms (Views: 81.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-09-21 17:50:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 70ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 10:48:25 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 24ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 10:48:42 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 10:50:17 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 896ms (ActiveRecord: 735.2ms)
+
+
+
+NoMethodError - undefined method `after_initalize' for #<Class:0x00007fb75ee75730>
+Did you mean?  after_initialize:
+  app/models/user.rb:8:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 10:50:52 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 25ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 10:51:30 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 15ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: users:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 10:51:32 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: users:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 10:56:01 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: users:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 10:56:45 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users" for ::1 at 2021-09-22 10:56:52 -0700
+Processing by Api::UsersController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users" for ::1 at 2021-09-22 10:56:54 -0700
+Processing by Api::UsersController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users" for ::1 at 2021-09-22 10:57:00 -0700
+Processing by Api::UsersController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users" for ::1 at 2021-09-22 10:57:01 -0700
+Processing by Api::UsersController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users" for ::1 at 2021-09-22 10:57:02 -0700
+Processing by Api::UsersController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users" for ::1 at 2021-09-22 10:57:03 -0700
+Processing by Api::UsersController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]&user=1" for ::1 at 2021-09-22 10:57:25 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]", "user"=>"1"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `permit' for "1":String:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]&user=" for ::1 at 2021-09-22 10:57:30 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]", "user"=>""}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]&user=hello" for ::1 at 2021-09-22 10:57:34 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]", "user"=>"hello"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `permit' for "hello":String:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 10:57:42 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 11:02:20 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 23ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?username=testing1&password=[FILTERED]" for ::1 at 2021-09-22 11:10:36 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"testing1", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:47:in `user_params'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users" for ::1 at 2021-09-22 11:12:01 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"hello1", "password"=>"[FILTERED]"}}
+  [1m[35m (61.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (112.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hello1"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (53.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vk06qxEUSuAU_mm8dBSeuw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Create (655.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "hello1"], ["password_digest", "$2a$12$5SBcsGy5znktOgxVYUC5OueYYhG1XPN9n7BP7p1lIDijgC08uhhBG"], ["session_token", "Vk06qxEUSuAU_mm8dBSeuw"], ["created_at", "2021-09-22 18:12:05.443827"], ["updated_at", "2021-09-22 18:12:05.443827"]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (94.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (120.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hello1"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "dwlgc6zFUOwQ3dwkLUPYEg"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (81.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "dwlgc6zFUOwQ3dwkLUPYEg"], ["updated_at", "2021-09-22 18:12:06.364940"], ["id", 1]]
+  ↳ app/models/user.rb:32
+  [1m[35m (19.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (5.4ms)
+  Rendered api/users/show.json.jbuilder (21.1ms)
+Completed 200 OK in 4816ms (Views: 102.4ms | ActiveRecord: 2483.6ms)
+
+
+  [1m[36mUser Load (39.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
