@@ -36,7 +36,10 @@ function lucasNumber(n) {
 // sumArray([5, 2])         // => 7
 // sumArray([4, 10, -1, 2]) // => 15
 function sumArray(array) {
-
+    if (!array.length) return 0;
+    if (array.length === 1) return array[0];
+    let num = array.shift();
+    return num + sumArray(array);
 }
 
 
